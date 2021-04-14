@@ -1,0 +1,58 @@
+{
+  "name": "clients_and_providers",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "server": "env-cmd -f ./.env nodemon server/index.js",
+    "client": "vue-cli-service serve",
+    "all": "concurrently \"npm:server\" \"npm:client\"",
+    "clean": "rm -rf dist",
+    "reset": "npm run clean && rm -rf node_modules",
+    "build": "vue-cli-service build",
+    "start": "env-cmd -f ./.env node server/index.js"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "bulma": "^0.9.2",
+    "core-js": "^3.6.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.3",
+    "swagger-jsdoc": "^6.1.0",
+    "swagger-ui-express": "^4.1.6",
+    "validator": "^13.5.2",
+    "vue": "^2.6.11"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "babel-eslint": "^10.1.0",
+    "concurrently": "^6.0.1",
+    "env-cmd": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "nodemon": "^2.0.7",
+    "sass": "^1.32.8",
+    "sass-loader": "^10.0.5",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
